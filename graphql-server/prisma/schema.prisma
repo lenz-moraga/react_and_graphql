@@ -5,6 +5,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// To define the GraphQL object types, we will be using a prima plugin named, @pothos/plugin-prisma, we can achieve the same result without the plugin but the process is very manual, and the plugin makes this process a lot smoother and provides type safety between GraphQL types and the database schema
+generator pothos {
+  provider = "prisma-pothos-types"
+}
+// Once this is added, we will need a way to generate Pothos' artifacs. we will need to npm i and regenerate Prima Client eacht time this application is deployed, so we will be adding the followin script in the packagejson => npm i && npx prisma generate
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
