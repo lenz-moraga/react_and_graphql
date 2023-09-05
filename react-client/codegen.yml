@@ -1,0 +1,13 @@
+# The Codegen packages installed generate the Typescript types for each GraphQL object, query and mutation type in our GraphQL schema and help make our API request type-safe.
+
+schema: http://localhost:4000/graphql
+# Url of our GraphQL schema
+documents: ./src/**/*.graphql
+# A blob that finds any . graphql file in our codebase
+generates:
+  # The congiguration that tells GraphQL Codegen what to generate and which plugins to use
+  ./src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node

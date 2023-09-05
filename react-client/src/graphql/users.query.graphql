@@ -1,0 +1,18 @@
+# To keep things orfanized, we write our queries within a different folder named graphql
+# GraphQL Codegen won't be able to generate any types for your GraphQL queries if you don't hay any queries.
+
+# In this case we will be only needing one query, which retrieve the list of users and their messages.
+
+query GetUsers {
+  users {
+    name
+    messages {
+      body
+    }
+  }
+}
+
+
+# After creating our query, we should run the npm run codegen command to be able to generate the types representing our query, the response, and the types available via our API.
+
+# Be sure to have our GraphQL API up and running before running the command.
