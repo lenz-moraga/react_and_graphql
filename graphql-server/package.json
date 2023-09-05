@@ -26,5 +26,8 @@
     "@prisma/client": "^5.2.0",
     "graphql-scalars": "^1.22.2",
     "graphql-yoga": "^4.0.4"
+  },
+  "engines": {
+    "node": "16.13"
   }
 }
